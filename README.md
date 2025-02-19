@@ -1,5 +1,6 @@
 # icon-pack
 [xg-icons](https://github.com/verkyer/xg-icons) 的 Python 重构版本，解决了 NAS 部署的权限问题！
+容器内的`端口`和`路径`有变化，注意修改！
 ## 界面展示
 ![image](https://github.com/verkyer/xg-icons/blob/main/demo.png)
 ## 参照Yaml

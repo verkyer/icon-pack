@@ -8,9 +8,10 @@ app = Flask(__name__, template_folder='.', static_folder='static')
 app.logger.setLevel(logging.ERROR)
 
 BASE_DIR = 'images'
-# LOGO_IMG = 'favicon.ico'  #  移除此处默认值，从环境变量获取
-SITE_NAME = os.environ.get('SITE_NAME', 'xg-icons')
-COPYRIGHT = os.environ.get('COPYRIGHT', 'Created by <a href="https://github.com/verkyer/xg-icons" target="_blank" rel="noopener noreferrer">@xg-icons</a>.')
+
+# 默认值：
+SITE_NAME = os.environ.get('SITE_NAME', 'icon-pack')  # 默认标题改为 'icon-pack'
+COPYRIGHT = os.environ.get('COPYRIGHT', 'Created by <a href="https://github.com/verkyer/icon-pack" target="_blank" rel="noopener noreferrer">@icon-pack</a>.') # 默认版权信息和链接
 
 def is_valid_path(path, base_dir):
     base_path = os.path.realpath(base_dir)
