@@ -9,3 +9,4 @@ services:
     environment:
       - SITE_NAME=icons-pack #网站标题
       #- LOGO_IMG=favicon.ico  # 设置站点logo（路径或网址）
+    restart: unless-stopped
