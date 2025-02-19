@@ -17,7 +17,7 @@ RUN mkdir -p images  # -p 是递归创建目录（确保可用性）
 # 声明构建参数
 ARG LOGO_IMG=favicon.ico
 ARG SITE_NAME=xg-icons
-ARG COPYRIGHT="Created by <a href=\"https://github.com/verkyer/xg-icons\" target=\"_blank\" rel=\"noopener noreferrer\">@xg-icons</a>."
+ARG COPYRIGHT="Created by <a href="https://github.com/verkyer/icon-pack" target="_blank" rel="noopener noreferrer">@icon-pack</a>"
 
 # 设置环境变量
 ENV LOGO_IMG=$LOGO_IMG
