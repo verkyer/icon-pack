@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ siteName }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('logo') }}" type="image/x-icon">  <!-- 标签页图标指向 /logo -->
+</head>
+<body>
+    <header class="header">
+        <div class="logo-title">
+            <img src="{{ url_for('logo') }}" alt="Logo" class="logo">  <!-- 网站标题图标指向 /logo -->
+            <h1>{{ siteName }}</h1>
+        </div>
+        <button id="theme-toggle" class="theme-toggle-button">🌙</button>
+    </header>
+
+    <div class="search-container">
+        <select class="group-select" onchange="filterIcons()">
+            <option value="all">全部</option>
+            {% for category in categories %}
+                <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" class="search-input" placeholder="输入图标名称..." oninput="filterIcons()">
+    </div>
+
+    <div id="gallery" class="gallery">
+        {% for category, icons in iconData.items() %}
+            {% if icons %} <!-- Only render group if it has icons -->
+            <div class='icon-group' data-group='{{ category }}'>
+                <h2 class='group-title'>{{ category }}</h2>
+                <div class='icons'>
+                    {% for icon in icons %}
+                        <div class='icon' data-group='{{ icon.category }}'>
+                            <img src="{{ icon.imagePath }}" alt="{{ icon.iconName }}" loading='lazy' width='64' height='64' decoding='async' onerror="this.onerror=null; this.src='{{ url_for('static', filename='placeholder.png') }}';">
+                            <div class='icon-name'>{{ icon.iconName }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <footer class="footer">
+        {{ copyright|safe }}
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

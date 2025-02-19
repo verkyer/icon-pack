@@ -1,0 +1,11 @@
+services:
+  xg-icons:
+    container_name: xg-icons
+    image: verky/icon-pack:latest  # 显式指定镜像名称
+    ports:
+      - "28080:5000"
+    volumes:
+      - ./images:/app/images
+    environment:
+      - SITE_NAME=XG-icons #网站标题
+      #- LOGO_IMG=favicon.ico  # 设置站点logo（路径或网址）
