@@ -17,6 +17,7 @@ services:
     environment:
       - SITE_NAME=icons-pack #网站标题
       #- LOGO_IMG=favicon.ico  # 设置站点logo（路径或网址）
+    restart: unless-stopped
 ```
 - dockerhub
 ```
@@ -31,6 +32,7 @@ services:
     environment:
       - SITE_NAME=icons-pack #网站标题
       #- LOGO_IMG=favicon.ico  # 设置站点logo（路径或网址）
+    restart: unless-stopped
 ```
 JPG、PNG图标，需要放到`/images/分组目录`文件下；
 例如`/images/docker/1.png`，才会显示在首页`docker`分类下面。
