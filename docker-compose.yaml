@@ -1,11 +1,11 @@
 services:
-  xg-icons:
-    container_name: xg-icons
-    image: ghcr.io/verkyer/icon-pack:latest
+  icons-pack:
+    container_name: icons-pack
+    image: verky/icon-pack:latest
     ports:
       - "28080:5000"
     volumes:
-      - ./images:/app/images
+      - ./images:/app/images #图标目录
     environment:
-      - SITE_NAME=XG-icons #网站标题
+      - SITE_NAME=icons-pack #网站标题
       #- LOGO_IMG=favicon.ico  # 设置站点logo（路径或网址）
