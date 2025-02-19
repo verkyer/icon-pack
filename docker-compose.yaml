@@ -1,7 +1,7 @@
 services:
   xg-icons:
     container_name: xg-icons
-    image: verky/icon-pack:latest  # 显式指定镜像名称
+    image: ghcr.io/verkyer/icon-pack:latest
     ports:
       - "28080:5000"
     volumes:
