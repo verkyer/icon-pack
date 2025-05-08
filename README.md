@@ -4,12 +4,12 @@
 ## 界面展示
 ![image](https://github.com/verkyer/xg-icons/blob/main/demo.png)
 ## 参照Yaml
-- ghcr
+- dockerhub
 ```
 services:
   icons-pack:
     container_name: icons-pack
-    image: ghcr.io/verkyer/icon-pack:latest
+    image: verky/icon-pack:latest
     ports:
       - "28080:5000"
     volumes:
@@ -19,12 +19,12 @@ services:
       #- LOGO_IMG=favicon.ico  # 设置站点logo（路径或网址）
     restart: unless-stopped
 ```
-- dockerhub
+- ghcr
 ```
 services:
   icons-pack:
     container_name: icons-pack
-    image: verky/icon-pack:latest
+    image: ghcr.io/verkyer/icon-pack:latest
     ports:
       - "28080:5000"
     volumes:
